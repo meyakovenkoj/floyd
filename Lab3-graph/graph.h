@@ -2,12 +2,15 @@
 #define _GRAF__G
 
 #include <vector>
+#include <string>
+#include <fstream>
 #include <iostream>
 
 using namespace std;
 
 class Graph {
 	int amount;
+	fstream file;
 	vector<vector<int>> matrix;
 	int ** d;
 	int ** next;
@@ -28,5 +31,7 @@ public :
 	
 	void floyd();
 	void getShortestPath(int u, int v);
+	
+	void loadFromFile(string & name);
 };
 #endif // !_GRAF__G

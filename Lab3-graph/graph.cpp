@@ -6,7 +6,10 @@
 const int INF = 1000000;
 
 Graph::Graph(){
-	
+	string str;
+	cout << "Enter file name: ";
+	cin >> str;
+	loadFromFile(str);
 }//empty constructor
 
 Graph::Graph(int amountNodes){
@@ -33,6 +36,31 @@ istream & operator >> (istream &s, Graph &it){
 	}while(c);
 	return s;
 }//enter ribs of graph
+
+void Graph::loadFromFile(string & name){
+	file.open("/Users/yakovenko/Documents/Infa/Lab3-graph/Lab3-graph/"+name, fstream::in | fstream::out);
+	if (!file.is_open()) {
+		throw invalid_argument("File did not find");
+	}else{
+		int buf;
+		string s;
+		file >> buf;
+		setAmount(buf);
+		vector<int> b(amount);
+		for (int i = 0; i < amount; i++){
+			matrix.push_back(b);
+		}
+		getline(file, s);
+		for (int i = 0; i < amount; i++){
+			for(int j = 0; j < amount; j++){
+				file >> buf;
+				file.ignore();
+				matrix[i][j] = buf;
+			}
+		}
+		file.close();
+	}
+}
 
 ostream & operator << (ostream &s, Graph &it){
 	for(vector<int> c : it.matrix){
@@ -98,12 +126,13 @@ void Graph::floyd(){
 					next[u][v] = next[u][i];
 				}
 			}
-	
+	cout << "Matrix of distances:\n";
 	for(i = 0; i < amount; i++){
 		for(j = 0; j < amount; j++)
 			cout << d[i][j] << ' ';
 		cout << endl;
 	}
+	cout << "Matrix of ways:\n";
 	for(i = 0; i < amount; i++){
 		for(j = 0; j < amount; j++)
 			cout << next[i][j] << ' ';
@@ -150,3 +179,5 @@ void Graph::getShortestPath(int u, int v){
 	}
 	printf("%d", v);
 }
+
+
