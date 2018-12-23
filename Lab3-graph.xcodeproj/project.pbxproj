@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		73E28AF321CC167B00D5E453 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E28AF221CC167B00D5E453 /* main.cpp */; };
+		73E28AFC21CC17FF00D5E453 /* graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E28AFB21CC17FF00D5E453 /* graph.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		73E28AEF21CC167B00D5E453 /* Lab3-graph */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab3-graph"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E28AF221CC167B00D5E453 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		73E28AF921CC17FF00D5E453 /* graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
+		73E28AFA21CC17FF00D5E453 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		73E28AFB21CC17FF00D5E453 /* graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graph.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,9 @@
 		73E28AF121CC167B00D5E453 /* Lab3-graph */ = {
 			isa = PBXGroup;
 			children = (
+				73E28AFB21CC17FF00D5E453 /* graph.cpp */,
+				73E28AF921CC17FF00D5E453 /* graph.h */,
+				73E28AFA21CC17FF00D5E453 /* Header.h */,
 				73E28AF221CC167B00D5E453 /* main.cpp */,
 			);
 			path = "Lab3-graph";
@@ -118,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E28AFC21CC17FF00D5E453 /* graph.cpp in Sources */,
 				73E28AF321CC167B00D5E453 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

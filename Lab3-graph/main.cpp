@@ -1,15 +1,29 @@
-//
-//  main.cpp
-//  Lab3-graph
-//
-//  Created by Ivan Yakovenko on 20/12/2018.
-//  Copyright © 2018 Ivan Yakovenko. All rights reserved.
-//
-
+// A simple representation of graph using STL 
+//#include<bits/stdc++.h> 
+#include <vector>
 #include <iostream>
+#include <cstdlib>
+#include "graph.h"
+#include "Header.h"
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-	// insert code here...
-	std::cout << "Hello, World!\n";
+
+int main()
+{
+	int c = 1;
+	Graph my(6);
+	while(c){
+		cout << my;
+		cout << "\nADD?  ";
+		get_flow(c, cin);
+		if(c)
+			my.addApex();
+	}
+	cin >> my;
+	cout << my;
+	int u,v;
+	cin >> u >> v;
+	my.floyd();
+	my.getShortestPath(u, v);
 	return 0;
 }
